@@ -18,9 +18,6 @@ const Navbar = () => {
     setDrawerOpen(!drawerOpen);
 }
 
-
-
-
   return (
     <>
     <nav className="container mx-auto flex items-center py-4 px-6">
