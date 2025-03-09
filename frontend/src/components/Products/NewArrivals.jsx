@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';  // Import Link for navigation
 
 const NewArrivals = () => {
   const newArrivals = [
@@ -91,6 +92,7 @@ const NewArrivals = () => {
         },
       ],
     },
+    // Add other products as needed
   ];
 
   const scrollContainerRef = useRef(null);
@@ -196,18 +198,20 @@ const NewArrivals = () => {
         {/* New Arrivals Carousel */}
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-4 py-4 scrollbar-hide cursor-grab"
+          className="flex overflow-x-auto gap-4 py-4 scrollbar-hide"
         >
           {newArrivals.map((product) => (
-            <div key={product._id} 
-            className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative">
-              <img
-                src={product.images[0].url}
-                alt={product.images[0].altText}
-                className="w-full h-[500px] object-cover  rounded-lg user-select-none" // Prevent image selection
-              />
-              <h3 className="mt-2 text-lg font-semibold">{product.name}</h3>
-              <p className="text-sm text-gray-500">${product.price}</p>
+            <div key={product._id} className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative">
+              {/* Add Link to navigate to the collection page */}
+              <Link to={`/product/${product._id}`} className="block">
+                <img
+                  src={product.images[0].url}
+                  alt={product.images[0].altText}
+                  className="w-full h-[500px] object-cover rounded-lg cursor-pointer" // Ensure the image is clickable
+                />
+                <h3 className="mt-2 text-lg font-semibold">{product.name}</h3>
+                <p className="text-sm text-gray-500">${product.price}</p>
+              </Link>
             </div>
           ))}
         </div>

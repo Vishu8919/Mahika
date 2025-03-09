@@ -28,7 +28,7 @@ const Navbar = () => {
 
       {/* Center - Navigation Links */}
       <div className="flex-grow flex justify-center space-x-6">
-        <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">
+        <Link to="/collections/all" className="text-gray-700 hover:text-black text-sm font-medium uppercase">
           Men
         </Link>
 
@@ -74,7 +74,7 @@ const Navbar = () => {
 
     {/* Mobile Navigation */}
     <div className={`fixed top-0 left-0 w-3/4 sm:w-1/2 md:w-1/3 h-full bg-white shadow-lg transform 
-      transition-transform duration-300 z50 ${navDrawerOpen ? "translate-x-0" : "-translate-x-full"
+      transition-transform duration-300 z-50 ${navDrawerOpen ? "translate-x-0" : "-translate-x-full"
       }`}
       >
         <div className="flex justify-end p-4">
