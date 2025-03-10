@@ -58,7 +58,9 @@ const Checkout = () => {
             <h3 className="text-lg mb-4">Contact Details</h3>
             <div className="mb-4">
                 <label className="block text-gray-700">Email</label>
-                <input type="email" value="user@example.com" className="w-full p-2 border rounded" 
+                <input type="email" 
+                value="user@example.com"
+                 className="w-full p-2 border rounded" 
                 disabled
                 />
             </div>
